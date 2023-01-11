@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService} from '../_service/auth.service';
 import {StorageService} from '../_service/storage.service'
 @Component({
@@ -16,7 +17,8 @@ message : string = ""
 
 constructor(
   private authService : AuthService,
-  private storageService : StorageService
+  private storageService : StorageService,
+  private router : Router
   ){
 
 }
@@ -27,10 +29,11 @@ doLogin(){
       this.storageService.saveUser(data)
       this.isLoggedIn = true
       this.isLoginFailed = false
+      this.router.navigate(['annonces'])
     },
     error : err => {
       this.isLoginFailed = true
-      this.message = "identifiants incorects"
+      this.message = "identifiants incorrects"
       console.log("erreur login")
     }
   })

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
 import {Observable} from 'rxjs'
 
-const BASE_API = "http://localhost:9898/api/"
+const BASE_API = "http://localhost:8080/api/"
 const LOGIN = BASE_API + "login"
 const LOGOUT = BASE_API + "logout"
 const httpOptions = {
