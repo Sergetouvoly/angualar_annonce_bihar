@@ -1,0 +1,21 @@
+     <div class="card">
+         <img src="../assets/Portrait_Placeholder.png" alt="Profile" width="200" height="200">
+         <div class="text">
+             <h2>Welcome !</h2>
+             <p>
+                 Please Sign in to access content
+             </p>
+         </div>
+     </div>
+     <form action="">
+         <div class = "myinput">
+             <input type="text" id="username" name="username" placeholder = "Username" [(ngModel)] = "login">
+             <input type="password" id="password" name="password" placeholder = "Password" [(ngModel)] = "password">
+         </div>
+         <div *ngIf="isLoginFailed" class ="login-message alert alert-danger">
+           {{message}}
+         </div>
+         <div class="but">
+             <button (click) = "doLogin()">Sign in</button>
+         </div>
+     </form>

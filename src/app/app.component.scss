@@ -1,0 +1,14 @@
+:host{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 80px auto 50px;
+  grid-template-areas: "header" "main" "footer";
+  color: white;
+
+  section {
+    grid-area: "main";
+  }
+  }
