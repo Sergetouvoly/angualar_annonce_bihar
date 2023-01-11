@@ -4,30 +4,22 @@
     </menu>
 
     <div id="main-content">
+      <a class="btn btn-outline-primary" href="/annonce/create">
+        <i class="fas fa-plus fa-sm text-white-50"></i>
+        Ajouter
+       </a>
+
         <div class="cards">
-            <div class="card" >
+            <div class="card" *ngFor="let annonce of annonces" >
                 <img src="assets/img/Portrait_Placeholder.png" alt="..." />
                 <div class="card-detail">
                     <div class="card-detail-top">
-                        <span class="title">Title</span>
-                        <span class="description">Description</span>
+                        <span class="title">{{ annonce.title }}</span>
+                        <span class="description">{{ annonce.description }}</span>
                     </div>
                     <div class="card-detail-bottom">
-                        <span class="hour">1 hour ago </span>
-                        <span class="price">$99,00</span>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/img/rose-165819__340.jpg" alt="..." />
-                <div class="card-detail">
-                    <div class="card-detail-top">
-                        <span class="title">Title</span>
-                        <span class="description">Description</span>
-                    </div>
-                    <div class="card-detail-bottom">
-                        <span class="hour">1 hour ago </span>
-                        <span class="price">$99,00</span>
+                        <span class="hour ">Il y a {{ annonce.lastUpdated}} jours</span>
+                        <span class="price">${{ annonce.price }}</span>
                     </div>
                 </div>
             </div>

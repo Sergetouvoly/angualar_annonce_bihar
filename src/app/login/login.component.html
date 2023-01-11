@@ -8,16 +8,16 @@
          </div>
      </div>
      <form action="">
-         <div class = "myinput">
-             <input type="text" id="username" name="username" placeholder = "Username" [(ngModel)] = "login">
-             <input type="password" id="password" name="password" placeholder = "Password" [(ngModel)] = "password">
-         </div>
-         <div *ngIf="isLoginFailed" class ="login-message alert alert-danger">
-          <div class="container-fluid">
+       <div class = "myinput">
+         <div *ngIf="isLoginFailed" class ="login-message alert alert-danger container-fluid">
+          <div>
             {{message}}
           </div>
          </div>
-         <div class="but">
-             <button (click) = "doLogin()">Sign in</button>
-         </div>
+             <input type="text" id="username" name="username" placeholder = "Username" [(ngModel)] = "login">
+             <input type="password" id="password" name="password" placeholder = "Password" [(ngModel)] = "password">
+            </div>
+            <div class="but">
+              <button (click) = "doLogin()">Sign in</button>
+            </div>
      </form>

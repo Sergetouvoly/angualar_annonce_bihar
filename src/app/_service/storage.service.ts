@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Constantes } from '../utils/constantes';
 import { StateService } from './state.service';
 
 
-const USER_COOKIE = 'user'
 @Injectable({
   providedIn: 'root'
 })
@@ -16,22 +16,20 @@ export class StorageService {
   }
 
   saveUser(user: any): void {
-    window.sessionStorage.removeItem(USER_COOKIE)
-    window.sessionStorage.setItem(USER_COOKIE, JSON.stringify(user))
+    window.sessionStorage.removeItem(Constantes.USER_COOKIE)
+    window.sessionStorage.setItem(Constantes.USER_COOKIE, JSON.stringify(user))
     this.stateService.changeLoggedState(true)
   }
 
-  getUser(): void {
-    let user  = window.sessionStorage.getItem(USER_COOKIE)
+  getUser() {
+    let user  = window.sessionStorage.getItem(Constantes.USER_COOKIE)
     if(user){
       return JSON.parse(user)
     }
-
-
   }
 
   isLoggedIn(): boolean {
-    let user  = window.sessionStorage.getItem(USER_COOKIE)
+    let user  = window.sessionStorage.getItem(Constantes.USER_COOKIE)
 
     if(user)
       return true

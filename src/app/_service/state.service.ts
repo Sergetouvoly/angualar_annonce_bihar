@@ -5,13 +5,13 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class StateService {
-  private loggedInSource = new BehaviorSubject(false)
-  isLoggedIn = this.loggedInSource.asObservable()
+  private loggedInBase = new BehaviorSubject(false)
+  isLoggedIn = this.loggedInBase.asObservable()
 
   constructor() { }
 
   changeLoggedState(isLoggedIn: boolean){
-    this.loggedInSource.next(isLoggedIn)
+    this.loggedInBase.next(isLoggedIn)
   }
 
 }

@@ -12,6 +12,6 @@ export class TitleService {
   constructor() { }
 
   changeTitle(title : string) {
-    this.titleSource.next
+    this.titleSource.next(title)
   }
 }

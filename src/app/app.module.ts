@@ -9,7 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { AnnoncesComponent } from './annonces/annonces.component';
 import { ErrorComponent } from './error/error.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { AnnoncecreateComponent } from './annonces/annoncecreate/annoncecreate.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +18,8 @@ import {HttpClientModule} from '@angular/common/http'
     LoginComponent,
     FooterComponent,
     AnnoncesComponent,
-    ErrorComponent
+    ErrorComponent,
+    AnnoncecreateComponent
   ],
   imports: [
     BrowserModule,
